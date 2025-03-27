@@ -89,21 +89,21 @@ else
 fi
 
 # dotfilesインストール
-if [ -f "${DOTFILES_DIR}/config/install-dotfiles.sh" ]; then
-  DOTFILES_INSTALL_SCRIPT="${DOTFILES_DIR}/config/install-dotfiles.sh"
+DOTFILES_INSTALL_SCRIPT="${DOTFILES_DIR}/config/install-dotfiles.sh"
+
+if [ -f "${DOTFILES_INSTALL_SCRIPT}" ]; then
+  log_task "Running '${DOTFILES_INSTALL_SCRIPT}'"
+  bash "${DOTFILES_INSTALL_SCRIPT}" "$@"
 else
   error "install-dotfiles.shが見つかりません。"
 fi
 
-log_task "Running '${DOTFILES_INSTALL_SCRIPT}'"
-exec "${DOTFILES_INSTALL_SCRIPT}" "$@"
-
 # applicationインストール
-if [ -f "${DOTFILES_DIR}/apps/install-apps.sh" ]; then
-  APPS_INSTALL_SCRIPT="${DOTFILES_DIR}/config/install-apps.sh"
+APPS_INSTALL_SCRIPT="${DOTFILES_DIR}/apps/install-apps.sh"
+
+if [ -f "${APPS_INSTALL_SCRIPT}" ]; then
+  log_task "Running '${APPS_INSTALL_SCRIPT}'"
+  bash "${APPS_INSTALL_SCRIPT}" "$@"
 else
   error "install-apps.shが見つかりません。"
 fi
-
-log_task "Running '${APPS_INSTALL_SCRIPT}'"
-exec "${APPS_INSTALL_SCRIPT}" "$@"
