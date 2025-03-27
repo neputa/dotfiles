@@ -115,3 +115,24 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# fnm
+FNM_PATH="/home/takuma/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# fnm
+FNM_PATH="/home/takuma/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# fnm
+FNM_PATH="/home/takuma/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
