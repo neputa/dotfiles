@@ -1,0 +1,10 @@
+[user]
+	name = t.sasa
+	email = takuma.sasakubo@outlook.jp
+[core]
+	pager = less -cm
+	editor = nvim
+    encoding = utf-8
+	autocrlf = input
+[init]
+	defaultBranch = main
