@@ -15,10 +15,10 @@ function install {
   which $1 &>/dev/null
 
   if [ $? -ne 0 ]; then
-    log_task "Installing: ${1}..."
+    echo "Installing: ${1}..."
     sudo apt install -y $1
   else
-    log_task "Already installed: ${1}"
+    echo "Already installed: ${1}"
   fi
 }
 
