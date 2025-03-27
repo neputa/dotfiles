@@ -85,19 +85,25 @@ if [ -d "${DOTFILES_DIR}" ]; then
   git_clean "${DOTFILES_DIR}" "${DOTFILES_REPO}" "${DOTFILES_BRANCH}"
 else
   log_task "Cloning '${DOTFILES_REPO}' at branch '${DOTFILES_BRANCH}' to '${DOTFILES_DIR}'"
-  git clone --branch "${DOTFILES_BRANCH}" "${DOTFILES_REPO}" "${DOTFILES_DIR}"
+  git clone --recursive --branch "${DOTFILES_BRANCH}" "${DOTFILES_REPO}" "${DOTFILES_DIR}"
 fi
 
+# dotfilesインストール
 if [ -f "${DOTFILES_DIR}/config/install-dotfiles.sh" ]; then
-  INSTALL_SCRIPT="${DOTFILES_DIR}/config/install-dotfiles.sh"
+  DOTFILES_INSTALL_SCRIPT="${DOTFILES_DIR}/config/install-dotfiles.sh"
 else
   error "install-dotfiles.shが見つかりません。"
 fi
 
-log_task "Running '${INSTALL_SCRIPT}'"
-exec "${INSTALL_SCRIPT}" "$@"
+log_task "Running '${DOTFILES_INSTALL_SCRIPT}'"
+exec "${DOTFILES_INSTALL_SCRIPT}" "$@"
 
-# sbumodule初期化
-cd ${DOTFILES_DIR}
-git submodule init
-git submodule update
+# applicationインストール
+if [ -f "${DOTFILES_DIR}/apps/install-apps.sh" ]; then
+  APPS_INSTALL_SCRIPT="${DOTFILES_DIR}/config/install-apps.sh"
+else
+  error "install-apps.shが見つかりません。"
+fi
+
+log_task "Running '${APPS_INSTALL_SCRIPT}'"
+exec "${APPS_INSTALL_SCRIPT}" "$@"
