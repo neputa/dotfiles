@@ -12,7 +12,7 @@ log_task "# アプリケーションのインストール"
 sudo apt update && sudo apt full-upgrade -y
 
 function install {
-  which $1 &> /dev/null
+  which $1 &>/dev/null
 
   if [ $? -ne 0 ]; then
     log_task "Installing: ${1}..."
@@ -33,7 +33,14 @@ install wget
 install xclip
 
 # programs/ 以下の全scriptを実行
-for f in programs/*.sh; do bash "$f" -H; done
+shopt -s nullglob # *.sh に一致するファイルがない場合、ループを実行しないようにする
+
+cd $(dirname "$0")
+
+for f in programs/*.sh; do
+  [ -f "$f" ] || continue # ファイルが存在しない場合はスキップ
+  bash "$f" -H
+done
 
 # Get all upgrades
 sudo apt upgrade -y

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installing Lazygit"
+echo "# Installing Lazygit"
 
 # 作業ディレクトリ
 WORK_DIR="temp$(date +"%Y%m%d%I%M%S")"
@@ -13,4 +13,6 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/downl
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 
+echo "# ディレクトリ: ${WORK_DIR} を削除..."
+cd ../
 rm -rf ${WORK_DIR}

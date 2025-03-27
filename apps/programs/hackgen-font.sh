@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installing HackGen Font"
+echo "# Installing HackGen Font"
 
 # 作業ディレクトリ
 WORK_DIR="temp$(date +"%Y%m%d%I%M%S")"
@@ -24,4 +24,6 @@ mkdir -p ~/.fonts
 mv ${filename} ~/.fonts/
 fc-cache -fv
 
+echo "# ディレクトリ: ${WORK_DIR} を削除..."
+cd ../
 rm -rf ${WORK_DIR}
