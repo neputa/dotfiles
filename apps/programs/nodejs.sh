@@ -18,6 +18,9 @@ fnm install --lts
 
 source ~/.bashrc
 
+# pnpmをインストール
+npm install -g pnpm
+
 echo "# ディレクトリ: ${WORK_DIR} を削除..."
 cd ../
 rm -rf ${WORK_DIR}
