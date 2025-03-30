@@ -1,11 +1,17 @@
+$LocalAppDataPath1 = $env:LOCALAPPDATA + "\Programs\UniGetUI\UniGetUI.exe"
+$LocalAppDataPath2 = $env:LOCALAPPDATA + "\UniGetUI\UniGetUI.exe"
+$LocalAppDataPath3 = "C:\Program Files\UniGetUI\UniGetUI.exe"
+
 $PossiblePaths = @(
-    Join-Path -Path $env:LOCALAPPDATA -ChildPath "Programs\UniGetUI\UniGetUI.exe",
-    Join-Path -Path $env:LOCALAPPDATA -ChildPath "UniGetUI\UniGetUI.exe",
-    "C:\Program Files\UniGetUI\UniGetUI.exe"
+    $LocalAppDataPath1,
+    $LocalAppDataPath2,
+    $LocalAppDataPath3
 )
 
+Write-Host "UniGetUIのインストールを確認しています..."
 $IsInstalled = $false
 foreach ($Path in $PossiblePaths) {
+    Write-Host "Checking path: $Path"
     if (Test-Path $Path) {
         $IsInstalled = $true
         break
