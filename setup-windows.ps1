@@ -1,6 +1,6 @@
 $GitRepositoryHost = "https://github.com"
-$GitUserName = "nepta"
-$GitRepositoryUri = "{0}/{1}/dotfiles.git" -f $GitRepositoryHost, $GitUserName
+$GitUserName = "neputa"
+$GitRepositoryUri = "{0}/{1}/dotfiles" -f $GitRepositoryHost, $GitUserName
 $GitBranch = "main"
 $DotfilesFolderName = ".dotfiles"
 $DotfilesFolderPath = Join-Path -Path $HOME -ChildPath $DotfilesFolderName
