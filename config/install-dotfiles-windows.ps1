@@ -13,10 +13,12 @@ Get-ChildItem -Directory $SourceFolder | ForEach-Object {
     $TargetPath = Join-Path -Path $TargetFolder -ChildPath $_.Name
 
     if (Test-Path $TargetPath) {
-        if (-not (Test-Path $TargetPath -PathType SymbolicLink)) {
-            Rename-Item -Path $TargetPath -NewName "$($TargetPath).backup"
+        $TargetItem = Get-Item -Path $TargetPath -ErrorAction SilentlyContinue
+        # シンボリックリンクかどうかを確認
+        if ($TargetItem -and $TargetItem.Attributes -band [System.IO.FileAttributes]::ReparsePoint) {
+            Remove-Item -Path $TargetPath -Force
         } else {
-            Remove-Item -Path $TargetPath
+            Rename-Item -Path $TargetPath -NewName "$($TargetPath).backup"
         }
     }
 
