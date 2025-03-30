@@ -1,6 +1,6 @@
 $GitRepositoryHost = "https://github.com"
 $GitUserName = "nepta"
-$GitRepositoryUri = "{0}/{1}/dotfiles" -f $GitRepositoryHost, $GitUserName
+$GitRepositoryUri = "{0}/{1}/dotfiles.git" -f $GitRepositoryHost, $GitUserName
 $GitBranch = "main"
 $DotfilesFolderName = ".dotfiles"
 $DotfilesFolderPath = Join-Path -Path $HOME -ChildPath $DotfilesFolderName
@@ -54,4 +54,3 @@ Write-Host "UniGetUIにインストールアプリリストをインポートし
 Write-Host "$DotfilesFolderPath\windows\UniGetUI\README.md"
 
 Write-Host "処理が完了しました。"
-
