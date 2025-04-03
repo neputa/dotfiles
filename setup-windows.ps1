@@ -49,6 +49,13 @@ if (Test-Path $AppsInstallScriptPath) {
     exit 1
 }
 
+# 環境変数設定
+# Write-Host "環境変数を設定します。"
+[System.Environment]::SetEnvironmentVariable("LAZYGIT_SHELL", "pwsh -c", "User")
+$Env:LAZYGIT_SHELL = "pwsh -c"
+
+Write-Host "LAZYGIT_SHELL has been set to 'pwsh -c'"
+
 # UniGetUIの設定案内
 Write-Host "UniGetUIにインストールアプリリストをインポートしてください:"
 Write-Host "$DotfilesFolderPath\windows\UniGetUI\README.md"
