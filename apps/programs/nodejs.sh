@@ -9,17 +9,21 @@ mkdir ${WORK_DIR}
 cd ${WORK_DIR}
 
 # fnmをダウンロードしてインストールする：
-curl -o- https://fnm.vercel.app/install | bash
-
-source ~/.bashrc
+if ! command -v fnm &>/dev/null; then
+  curl -o- https://fnm.vercel.app/install | bash
+  source ~/.bashrc
+fi
 
 # Node.jsをダウンロードしてインストールする：
-fnm install --lts
-
-source ~/.bashrc
+if ! command -v node &>/dev/null; then
+  fnm install --lts
+  source ~/.bashrc
+fi
 
 # pnpmをインストール
-npm install -g pnpm
+if ! command -v pnpm &>/dev/null; then
+  npm install -g pnpm
+fi
 
 echo "# ディレクトリ: ${WORK_DIR} を削除..."
 cd ../

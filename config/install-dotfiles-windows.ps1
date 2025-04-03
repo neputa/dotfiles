@@ -5,6 +5,7 @@ param (
 $WorkFolder = Join-Path -Path $DotfilesFolderPath -ChildPath "config"
 Set-Location -Path $WorkFolder
 
+# LOCALAPPDATA
 $SourceFolder = Join-Path -Path $WorkFolder -ChildPath ".config"
 $TargetFolder = $env:LOCALAPPDATA
 
@@ -24,5 +25,23 @@ Get-ChildItem -Directory $SourceFolder | ForEach-Object {
 
     New-Item -ItemType SymbolicLink -Path $TargetPath -Target $SourcePath
 }
+
+# HOMEフォルダー
+$FilesToLink = @(".gitconfig", ".editorconfig")
+foreach ($FileName in $FilesToLink) {
+    $SourcePath = Join-Path -Path $WorkFolder -ChildPath $FileName
+    $TargetPath = Join-Path -Path $HOME -ChildPath $FileName
+
+    if (Test-Path $TargetPath) {
+        $TargetItem = Get-Item -Path $TargetPath -ErrorAction SilentlyContinue
+        # シンボリックリンクかどうかを確認
+        if ($TargetItem -and $TargetItem.Attributes -band [System.IO.FileAttributes]::ReparsePoint) {
+            Remove-Item -Path $TargetPath -Force
+        }
+    }
+
+    New-Item -ItemType SymbolicLink -Path $TargetPath -Target $SourcePath
+}
+
 
 Write-Host "シンボリックリンクの作成が完了しました。"
