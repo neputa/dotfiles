@@ -37,6 +37,8 @@ foreach ($FileName in $FilesToLink) {
         # シンボリックリンクかどうかを確認
         if ($TargetItem -and $TargetItem.Attributes -band [System.IO.FileAttributes]::ReparsePoint) {
             Remove-Item -Path $TargetPath -Force
+        } else {
+            Rename-Item -Path $TargetPath -NewName "$($TargetPath).backup"
         }
     }
 
