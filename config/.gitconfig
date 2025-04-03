@@ -1,12 +1,12 @@
 [user]
 	name = t.sasa
 	email = takuma.sasakubo@outlook.jp
-[core]
-	pager = less -cm
-	editor = nvim
-    encoding = utf-8
-	autocrlf = input
 [init]
 	defaultBranch = main
-[push]
-	default = current
+[core]
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+	quotepath = false
+	autocrlf = input
+	editor = nvim
+[il8n]
+	commitencoding = utf-8
