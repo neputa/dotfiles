@@ -27,7 +27,7 @@ Get-ChildItem -Directory $SourceFolder | ForEach-Object {
 }
 
 # HOMEフォルダー
-$FilesToLink = @(".gitconfig", ".editorconfig")
+$FilesToLink = @(".editorconfig")
 foreach ($FileName in $FilesToLink) {
     $SourcePath = Join-Path -Path $WorkFolder -ChildPath $FileName
     $TargetPath = Join-Path -Path $HOME -ChildPath $FileName
