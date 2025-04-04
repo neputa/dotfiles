@@ -97,7 +97,7 @@ fi
 
 # -=-=-=- common シンボリックリンク -=-=-=-
 # create_symbolicklink_function.shを読み込む
-source "${DOTFILES_DIR}/utils/create_symboliclink_function.sh"
+source "${DOTFILES_DIR}/utils/create_symbolicklink_function.sh"
 
 # ファイルのシンボリックリンク作成
 log_task "Create symbolic links to common configuration files"
