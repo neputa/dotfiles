@@ -14,7 +14,7 @@ This is my personal dotfiles repository.
 - Run the following in a terminal.
 
 ```bash
-bash -c "$(wget -qO- https://raw.githubusercontent.com/neputa/dotfiles/refs/heads/main/setup.sh)"
+bash -c "$(wget -qO- https://raw.githubusercontent.com/neputa/dotfiles/refs/heads/main/setup-ubuntu.sh)"
 ```
 
 Windows
@@ -40,7 +40,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 - If you want to install the Japanese manual, please execute the following command after rebooting.
 
 ```bash
-$ sudo apt -y install manpages-ja manpages-ja-dev
+sudo apt -y install manpages-ja manpages-ja-dev
 ```
 
 ## Repositories used as references
