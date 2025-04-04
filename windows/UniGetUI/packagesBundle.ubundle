@@ -936,6 +936,29 @@
       }
     },
     {
+      "Id": "font-hackgen-nerd",
+      "Name": "Font Hackgen Nerd",
+      "Version": "2.10.0",
+      "Source": "community",
+      "ManagerName": "Chocolatey",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "ripgrep",
       "Name": "Ripgrep",
       "Version": "14.1.0",

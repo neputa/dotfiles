@@ -1,12 +1,15 @@
+# utilsスクリプトのインポート
+. ./utils/Check-And-Install-App.ps1
+. ./utils/Create-Symlinks.ps1
+
 $GitRepositoryHost = "https://github.com"
 $GitUserName = "neputa"
 $GitRepositoryUri = "{0}/{1}/dotfiles" -f $GitRepositoryHost, $GitUserName
 $GitBranch = "main"
 $DotfilesFolderName = ".dotfiles"
 $DotfilesFolderPath = Join-Path -Path $HOME -ChildPath $DotfilesFolderName
-$DotfilesInstallScriptPath = Join-Path -Path $DotfilesFolderPath -ChildPath "config/install-dotfiles-windows.ps1"
-$AppsInstallScriptPath = Join-Path -Path $DotfilesFolderPath -ChildPath "apps/install-apps-windows.ps1"
 
+# -=-=-=- Git関連の処理 -=-=-=-
 # wingetのインストール確認
 if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "wingetがインストールされていません。以下のURLからインストールしてください:"
@@ -31,30 +34,25 @@ if (Test-Path $DotfilesFolderPath) {
     git clone --recursive --branch $GitBranch $GitRepositoryUri $DotfilesFolderPath
 }
 
-# $DotfilesInstallScriptPathの確認
-if (Test-Path $DotfilesInstallScriptPath) {
-    Write-Host "dotfilesのインストールスクリプトを実行します。"
-    & $DotfilesInstallScriptPath $DotfilesFolderPath
-} else {
-    Write-Host "エラー: $DotfilesInstallScriptPath が存在しません。"
-    exit 1
-}
+# -=-=-=- シンボリックリンクの作成 -=-=-=-
+Write-Host "シンボリックリンク作成を行います。"
 
-# $AppsInstallScriptPathの確認
-if (Test-Path $AppsInstallScriptPath) {
-    Write-Host "アプリケーションのインストールスクリプトを実行します。"
-    & $AppsInstallScriptPath
-} else {
-    Write-Host "エラー: $AppsInstallScriptPath が存在しません。"
-    exit 1
-}
+$CommonConfigPath = Join-Path -Path $DotfilesFolderPath -ChildPath "common\config"
+$WindowsConfigPath = Join-Path -Path $DotfilesFolderPath -ChildPath "windows\config"
 
-# 環境変数設定
-# Write-Host "環境変数を設定します。"
-[System.Environment]::SetEnvironmentVariable("LAZYGIT_SHELL", "pwsh -c", "User")
-$Env:LAZYGIT_SHELL = "pwsh -c"
+Create-Symlinks -SourceFolder $CommonConfigPath -TargetFolder $env:LOCALAPPDATA
+Create-Symlinks -SourceFolder $WindowsConfigPath -TargetFolder $env:LOCALAPPDATA
 
-Write-Host "LAZYGIT_SHELL has been set to 'pwsh -c'"
+Write-Host "シンボリックリンクの作成が完了しました。"
+
+# アプリケーションのインストール
+$PossiblePaths = @(
+    $env:LOCALAPPDATA + "\Programs\UniGetUI\UniGetUI.exe",
+    $env:LOCALAPPDATA + "\UniGetUI\UniGetUI.exe",
+    "C:\Program Files\UniGetUI\UniGetUI.exe"
+)
+
+Check-And-Install-App -PossiblePaths $PossiblePaths -WingetId "MartiCliment.UniGetUI"
 
 # UniGetUIの設定案内
 Write-Host "UniGetUIにインストールアプリリストをインポートしてください:"

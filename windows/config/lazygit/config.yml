@@ -505,7 +505,7 @@ customCommands:
       - type: "confirm"
         title: "Commit"
         body: "Commit with the message '{{.Form.Type}}: {{.Form.Message}}{{.Form.Emoji}}'. Is this okay?"
-    command: "$LAZYGIT_SHELL 'type=\"{{.Form.Type}}\"; message=\"{{.Form.Message}}\"; emoji=\"{{.Form.Emoji}}\"; commit_message=\"$type: $message $emoji\"; git commit -m \"$commit_message\"'"
+    command: "pwsh -c 'type=\"{{.Form.Type}}\"; message=\"{{.Form.Message}}\"; emoji=\"{{.Form.Emoji}}\"; commit_message=\"$type: $message $emoji\"; git commit -m \"$commit_message\"'"
     loadingText: "Commiting..."
 
 # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-pull-request-urls
