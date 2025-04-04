@@ -1,7 +1,3 @@
-# utilsスクリプトのインポート
-. ./utils/Check-And-Install-App.ps1
-. ./utils/Create-Symlinks.ps1
-
 $GitRepositoryHost = "https://github.com"
 $GitUserName = "neputa"
 $GitRepositoryUri = "{0}/{1}/dotfiles" -f $GitRepositoryHost, $GitUserName
@@ -33,6 +29,11 @@ if (Test-Path $DotfilesFolderPath) {
     Write-Host "リポジトリをクローンします。"
     git clone --recursive --branch $GitBranch $GitRepositoryUri $DotfilesFolderPath
 }
+
+# utilsスクリプトのインポート
+cd $DotfilesFolderPath
+. ./utils/Check-And-Install-App.ps1
+. ./utils/Create-Symlinks.ps1
 
 # -=-=-=- シンボリックリンクの作成 -=-=-=-
 Write-Host "シンボリックリンク作成を行います。"
