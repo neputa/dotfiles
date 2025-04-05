@@ -44,6 +44,7 @@ end_of_line = lf
 # .NET Coding Conventions     #
 ###############################
 [*.{cs,vb}]
+indent_size = 4
 guidelines = 80, 120
 
 # IDE0055: Fix formatting
