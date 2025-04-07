@@ -52,6 +52,10 @@ Create-Single-Symlink -SourcePath $TerminalConfigPathSource -TargetPath $Termina
 
 Write-Host "シンボリックリンクの作成が完了しました。"
 
+# -=-=-=- 環境変数の作成 -=-=-=-
+# Visual Studioのnuget package用フォルダー
+[Environment]::SetEnvironmentVariable("NUGET_PACKAGES", "C:\nuget", "Machine")
+
 # アプリケーションのインストール
 $PossiblePaths = @(
     $env:LOCALAPPDATA + "\Programs\UniGetUI\UniGetUI.exe",
