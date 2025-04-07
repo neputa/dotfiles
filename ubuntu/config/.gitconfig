@@ -9,3 +9,5 @@
 	editor = nvim
 [il8n]
 	commitencoding = utf-8
+[commit]
+	template = ~/.commit_template
