@@ -1,21 +1,21 @@
 # ==== Commit Messages ====
 
 # ==== Commit Messages(Template) ====
-# Prefix :emoji: 変更内容 #Issue番号
+# Prefix: :emoji: 変更内容 #Issue番号
 # 例) fix: :bug: コメント追加 #438
 # ==== Prefix ====
-# :fix: バグ修正
-# :feat: 新機能の追加
-# :update: バグではない機能修正
-# :docs: ドキュメントの更新や改善
-# :disable: 無効化
-# :upgrade: バージョンアップ
-# :style: コードフォーマットの修正、UIのみの変更
-# :refactor: リファクタリング
-# :test: テストの追加や改善
-# :chore: ビルドプロセスの変更や改善
-# :perf: パフォーマンスの改善
-# :WIP: 作業中
+# fix: バグ修正
+# feat: 新機能の追加
+# update: バグではない機能修正
+# docs: ドキュメントの更新や改善
+# disable: 無効化
+# upgrade: バージョンアップ
+# style: コードフォーマットの修正、UIのみの変更
+# refactor: リファクタリング
+# test: テストの追加や改善
+# chore: ビルドプロセスの変更や改善
+# perf: パフォーマンスの改善
+# WIP: 作業中
 
 # ==== Emojis ====
 # 🐛  :bug: (fix) バグ修正
