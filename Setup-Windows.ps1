@@ -44,6 +44,12 @@ $WindowsConfigPath = Join-Path -Path $DotfilesFolderPath -ChildPath "windows\con
 Create-Symlinks -SourceFolder $CommonConfigPath -TargetFolder $env:LOCALAPPDATA
 Create-Symlinks -SourceFolder $WindowsConfigPath -TargetFolder $env:LOCALAPPDATA
 
+# Terminal
+$TerminalConfigPathSource = Join-Path -Path $DotfilesFolderPath -ChildPath "windows\terminal\settings.json"
+$TerminalConfigPathTarget = Join-Path -Path $env:LOCALAPPDATA -ChildPath "Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+
+Create-Single-Symlink -SourcePath $TerminalConfigPathSource -TargetPath $TerminalConfigPathTarget
+
 Write-Host "シンボリックリンクの作成が完了しました。"
 
 # アプリケーションのインストール
