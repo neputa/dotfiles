@@ -35,10 +35,13 @@ insert_final_newline = true
 
 # Shell script files
 [*.sh]
-end_of_line = lf
 
 # astro files
 [*.astro]
+
+# xaml files
+[*.xaml]
+indent_size = 4
 
 ###############################
 # .NET Coding Conventions     #
