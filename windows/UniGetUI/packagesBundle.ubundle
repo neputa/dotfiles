@@ -959,6 +959,31 @@
       }
     },
     {
+      "Id": "lin-ycv.EverythingPowerToys",
+      "Name": "EverythingPowerToys",
+      "Version": "0.89.0",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [
+          ""
+        ],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "ripgrep",
       "Name": "Ripgrep",
       "Version": "14.1.0",
