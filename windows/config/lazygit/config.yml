@@ -513,8 +513,8 @@ customCommands:
             value: ":construction:"
       - type: "confirm"
         title: "Commit"
-        body: "Commit with the message '{{.Form.Type}}: {{.Form.Message}}{{.Form.Emoji}}'. Is this okay?"
-    command: "git commit -m '{{.Form.Type}}: {{.Form.Message}} {{.Form.Emoji}}'"
+        body: "Commit with the message '{{.Form.Type}}: {{.Form.Emoji}} {{.Form.Message}}'. Is this okay?"
+    command: "git commit -m '{{.Form.Type}}: {{.Form.Emoji}} {{.Form.Message}}'"
     loadingText: "Commiting..."
 
 # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-pull-request-urls
