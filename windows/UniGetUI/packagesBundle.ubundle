@@ -514,6 +514,31 @@
       }
     },
     {
+      "Id": "Microsoft.SQLServerManagementStudio",
+      "Name": "Microsoft SQL Server Management Studio",
+      "Version": "20.2.1",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [
+          ""
+        ],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "Microsoft.VisualStudio.2022.Community",
       "Name": "Visual Studio Community 2022",
       "Version": "17.13.5",
@@ -989,6 +1014,31 @@
       "Version": "14.1.0",
       "Source": "community",
       "ManagerName": "Chocolatey",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [
+          ""
+        ],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
+      "Id": "sharkdp.fd",
+      "Name": "fd",
+      "Version": "10.2.0",
+      "Source": "winget",
+      "ManagerName": "Winget",
       "InstallationOptions": {
         "SkipHashCheck": false,
         "InteractiveInstallation": false,
