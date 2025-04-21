@@ -8,23 +8,26 @@ WORK_DIR="temp$(date +"%Y%m%d%I%M%S")"
 mkdir ${WORK_DIR}
 cd ${WORK_DIR}
 
-# fnmをダウンロードしてインストールする：
-if ! command -v fnm &>/dev/null; then
-  curl -o- https://fnm.vercel.app/install | bash
-  source ~/.bashrc
+# nodejsをダウンロードしてインストールする：
+if ! command -v node &>/dev/null; then
+  sudo apt install nodejs
 fi
 
-# Node.jsをダウンロードしてインストールする：
-if ! command -v node &>/dev/null; then
-  fnm install --lts
-  source ~/.bashrc
+# npmをダウンロードしてインストールする：
+if ! command -v npm &>/dev/null; then
+  sudo apt install npm
 fi
+
+# n をインストールする：
+sudo npm install n -g
+
+# nodejsをnでインストールする：
+sudo n lts
 
 # pnpmをインストール
 if ! command -v pnpm &>/dev/null; then
-  npm install -g pnpm
+  sudo npm install -g pnpm
 fi
 
-echo "# ディレクトリ: ${WORK_DIR} を削除..."
-cd ../
-rm -rf ${WORK_DIR}
+# 古い nodejs npm の削除：
+sudo apt purge nodejs npm -y
