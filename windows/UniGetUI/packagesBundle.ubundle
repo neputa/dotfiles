@@ -144,6 +144,29 @@
       }
     },
     {
+      "Id": "DeepL.DeepL",
+      "Name": "DeepL",
+      "Version": "25.3.1",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "Figma.Figma",
       "Name": "Figma",
       "Version": "125.2.3",
@@ -914,31 +937,6 @@
       "Id": "caesium.install",
       "Name": "Caesium",
       "Version": "2.8.4",
-      "Source": "community",
-      "ManagerName": "Chocolatey",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [
-          ""
-        ],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
-      "Id": "deepl",
-      "Name": "Deepl",
-      "Version": "25.1.4.15077",
       "Source": "community",
       "ManagerName": "Chocolatey",
       "InstallationOptions": {
