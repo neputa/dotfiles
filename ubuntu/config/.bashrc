@@ -120,3 +120,9 @@ if [[ $- != *i* ]]; then
   return
 fi
 export LAZYGIT_SHELL="bash -c"
+
+# 自動的に /mnt/c を作成して C: ドライブをマウント（既にされていなければ）
+if ! mountpoint -q /mnt/c; then
+  sudo mkdir -p /mnt/c
+  sudo mount -t drvfs C: /mnt/c
+fi
