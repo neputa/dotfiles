@@ -128,13 +128,13 @@ if ! mountpoint -q /mnt/c; then
 fi
 
 # Add specific Windows path to WSL PATH
-windows_paths=(
-  "/mnt/c/apps/zenhan/bin64"
-  "/mnt/c/Program Files/Microsoft VS Code/bin"
-)
-
-for path in "${windows_paths[@]}"; do
-  if [ -d "$path" ] && [[ ":$PATH:" != *":$path:"* ]]; then
-    export PATH="$PATH:$path"
-  fi
-done
+# windows_paths=(
+#   "/mnt/c/apps/zenhan/bin64"
+#   "/mnt/c/Program Files/Microsoft VS Code/bin"
+# )
+#
+# for path in "${windows_paths[@]}"; do
+#   if [ -d "$path" ] && [[ ":$PATH:" != *":$path:"* ]]; then
+#     export PATH="$PATH:$path"
+#   fi
+# done
