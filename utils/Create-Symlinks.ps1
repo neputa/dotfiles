@@ -4,7 +4,7 @@ function Create-Symlinks {
         [string]$TargetFolder
     )
 
-    # フォルダーを対象にシンボリックリンクを作成
+    # create symboliklink for directories
     Get-ChildItem -Directory $SourceFolder | ForEach-Object {
         $SourcePath = $_.FullName
         $TargetPath = Join-Path -Path $TargetFolder -ChildPath $_.Name
@@ -12,7 +12,7 @@ function Create-Symlinks {
         if (Test-Path $TargetPath) {
             $TargetItem = Get-Item -Path $TargetPath -ErrorAction SilentlyContinue
 
-            # シンボリックリンクかどうかを確認
+            # check a existing symboliklink or not
             if ($TargetItem -and $TargetItem.Attributes -band [System.IO.FileAttributes]::ReparsePoint) {
                 Remove-Item -Path $TargetPath -Force
             } else {
@@ -23,7 +23,7 @@ function Create-Symlinks {
         New-Item -ItemType SymbolicLink -Path $TargetPath -Target $SourcePath
     }
 
-    # ファイルを対象にシンボリックリンクを作成
+    # create symboliklink for files
     Get-ChildItem -File -Path $SourceFolder -Filter ".*" | ForEach-Object {
         $SourcePath = $_.FullName
         $TargetPath = Join-Path -Path $HOME -ChildPath $_.Name
@@ -31,7 +31,7 @@ function Create-Symlinks {
         if (Test-Path $TargetPath) {
             $TargetItem = Get-Item -Path $TargetPath -ErrorAction SilentlyContinue
 
-            # シンボリックリンクかどうかを確認
+            # check a existing symboliklink or not
             if ($TargetItem -and $TargetItem.Attributes -band [System.IO.FileAttributes]::ReparsePoint) {
                 Remove-Item -Path $TargetPath -Force
             } else {
@@ -52,7 +52,7 @@ function Create-Single-Symlink {
     if (Test-Path $TargetPath) {
         $TargetItem = Get-Item -Path $TargetPath -ErrorAction SilentlyContinue
 
-        # シンボリックリンクかどうかを確認
+        # check a existing symboliklink or not
         if ($TargetItem -and $TargetItem.Attributes -band [System.IO.FileAttributes]::ReparsePoint) {
             Remove-Item -Path $TargetPath -Force
         } else {
