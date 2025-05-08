@@ -5,38 +5,38 @@ $GitBranch = "main"
 $DotfilesFolderName = ".dotfiles"
 $DotfilesFolderPath = Join-Path -Path $HOME -ChildPath $DotfilesFolderName
 
-# -=-=-=- Git関連の処理 -=-=-=-
-# wingetのインストール確認
+# -=-=-=- Git and Others -=-=-=-
+# winget
 if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-    Write-Host "wingetがインストールされていません。以下のURLからインストールしてください:"
+    Write-Host "wingetis not installed. install it from here:"
     Write-Host "https://learn.microsoft.com/ja-jp/windows/package-manager/winget/"
     exit 1
 }
 
-# gitのインストール確認
+# git
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-    Write-Host "gitがインストールされていません。wingetでインストールします。"
+    Write-Host "GIt is not installed. I install it by winget."
     winget install --id Git.Git -e
 }
 
-# $DotfilesFolderPathの確認
+# check $DotfilesFolderPath
 if (Test-Path $DotfilesFolderPath) {
-    Write-Host "既存のリポジトリをクリーンアップします。"
+    Write-Host "clean up existing repository"
     git -C $DotfilesFolderPath clean -fdx
     git -C $DotfilesFolderPath fetch origin $GitBranch
     git -C $DotfilesFolderPath reset --hard origin/$GitBranch
 } else {
-    Write-Host "リポジトリをクローンします。"
+    Write-Host "clone repostiroy"
     git clone --recursive --branch $GitBranch $GitRepositoryUri $DotfilesFolderPath
 }
 
-# utilsスクリプトのインポート
+# import utils scripts
 cd $DotfilesFolderPath
 . ./utils/Check-And-Install-App.ps1
 . ./utils/Create-Symlinks.ps1
 
-# -=-=-=- シンボリックリンクの作成 -=-=-=-
-Write-Host "シンボリックリンク作成を行います。"
+# -=-=-=- symboliklink -=-=-=-
+Write-Host "create symloliklink..."
 
 $CommonConfigPath = Join-Path -Path $DotfilesFolderPath -ChildPath "common\config"
 $WindowsConfigPath = Join-Path -Path $DotfilesFolderPath -ChildPath "windows\config"
@@ -50,13 +50,13 @@ $TerminalConfigPathTarget = Join-Path -Path $env:LOCALAPPDATA -ChildPath "Packag
 
 Create-Single-Symlink -SourcePath $TerminalConfigPathSource -TargetPath $TerminalConfigPathTarget
 
-Write-Host "シンボリックリンクの作成が完了しました。"
+Write-Host "done!"
 
-# -=-=-=- 環境変数の作成 -=-=-=-
-# Visual Studioのnuget package用フォルダー
+# -=-=-=- environment path -=-=-=-
+# Visual Studio nuget package directory
 [Environment]::SetEnvironmentVariable("NUGET_PACKAGES", "C:\nuget", "Machine")
 
-# アプリケーションのインストール
+# applications
 $PossiblePaths = @(
     $env:LOCALAPPDATA + "\Programs\UniGetUI\UniGetUI.exe",
     $env:LOCALAPPDATA + "\UniGetUI\UniGetUI.exe",
@@ -65,8 +65,8 @@ $PossiblePaths = @(
 
 Check-And-Install-App -PossiblePaths $PossiblePaths -WingetId "MartiCliment.UniGetUI"
 
-# UniGetUIの設定案内
-Write-Host "UniGetUIにインストールアプリリストをインポートしてください:"
+# UniGetUIの
+Write-Host "innstall apps with UniGetUI:"
 Write-Host "$DotfilesFolderPath\windows\UniGetUI\README.md"
 
-Write-Host "処理が完了しました。"
+Write-Host "done!"
