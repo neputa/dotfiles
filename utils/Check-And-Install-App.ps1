@@ -13,10 +13,10 @@ function Check-And-Install-App {
     }
 
     if (-not $IsInstalled) {
-        Write-Host "$WingetIdがインストールされていません。インストールを開始します。"
+        Write-Host "$WingetId is not installed. install WingetId..."
         winget install --id=$WingetId -e
-        Write-Host "$WingetIdのインストールが完了しました。"
+        Write-Host "done!"
     } else {
-        Write-Host "$WingetIdは既にインストールされています。"
+        Write-Host "$WingetId is already installed."
     }
 }
