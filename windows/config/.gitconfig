@@ -1,0 +1,14 @@
+[user]
+	name = t.sasa-win-home
+	email = takuma.sasakubo@outlook.jp
+[init]
+	defaultBranch = main
+[core]
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+	quotepath = false
+	autocrlf = input
+	editor = nvim
+[il8n]
+	commitencoding = utf-8
+[commit]
+	template = ~/.commit_template

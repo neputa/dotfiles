@@ -1,0 +1,13 @@
+[user]
+	name = t.sasa
+	email = takuma.sasakubo@outlook.jp
+[init]
+	defaultBranch = main
+[core]
+	quotepath = false
+	autocrlf = input
+	editor = nvim
+[il8n]
+	commitencoding = utf-8
+[commit]
+	template = ~/.commit_template

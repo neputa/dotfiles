@@ -1,0 +1,159 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane"
+            },
+            "id": "User.splitPane.91AB55B1"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{c8d600dd-4ef7-5bd8-921c-115a20e0d3ee}",
+    "initialRows": 50,
+    "keybindings": 
+    [
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "Terminal.MoveFocusDown",
+            "keys": "ctrl+shift+j"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+6"
+        },
+        {
+            "id": "Terminal.MoveFocusRight",
+            "keys": "ctrl+shift+l"
+        },
+        {
+            "id": "Terminal.MoveFocusUp",
+            "keys": "ctrl+shift+k"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.splitPane.91AB55B1",
+            "keys": "ctrl+shift+/"
+        },
+        {
+            "id": null,
+            "keys": "alt+down"
+        },
+        {
+            "id": null,
+            "keys": "alt+right"
+        },
+        {
+            "id": "Terminal.MoveFocusLeft",
+            "keys": "ctrl+shift+h"
+        },
+        {
+            "id": null,
+            "keys": "alt+left"
+        },
+        {
+            "id": null,
+            "keys": "alt+up"
+        }
+    ],
+    "launchMode": "default",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "Tango Dark",
+            "font": 
+            {
+                "face": "HackGen Console NF",
+                "size": 14
+            }
+        },
+        "list": 
+        [
+            {
+                "guid": "{c8d600dd-4ef7-5bd8-921c-115a20e0d3ee}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "backgroundImage": null,
+                "backgroundImageOpacity": 0.15,
+                "backgroundImageStretchMode": "fill",
+                "colorScheme": "Campbell Powershell",
+                "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+                "guid": "{219ab038-0ea7-4534-8583-d2b0c664b2af}",
+                "hidden": false,
+                "icon": "C:\\Users\\takuma\\OneDrive\\Pictures\\powershell.png",
+                "name": "Powershell 7",
+                "opacity": 100,
+                "padding": "10",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "backgroundImage": null,
+                "backgroundImageOpacity": 0.4,
+                "commandline": "C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin\\az.cmd",
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "padding": "50",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            }
+        ]
+    },
+    "schemes": [],
+    "startOnUserLogin": false,
+    "themes": []
+}
