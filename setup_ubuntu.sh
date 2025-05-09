@@ -2,10 +2,9 @@
 
 # -e: exit on error
 # -u: exit on unset variables
-set -u # 未定義があったら終了する
+set -u
 
-# -=-=-=- ログ出力関数 -=-=-=-
-# 絵文字を使ったログ出力関数を定義
+# -=-=-=- logger script -=-=-=-
 log_color() {
   color_code="$1"
   shift
@@ -37,15 +36,15 @@ error() {
   exit 1
 }
 
-# -=-=-=- ルート権限チェック -=-=-=-
-# ルート権限が必要な場合、sudoを使用してコマンドを実行する関数
+# -=-=-=- root authority check -=-=-=-
+# Function to execute commands using sudo if root privileges are required
 sudo() {
   # shellcheck disable=SC2312
   if [ "$(id -u)" -eq 0 ]; then
     "$@"
   else
     if ! command sudo --non-interactive true 2>/dev/null; then
-      log_manual_action "ルート権限が必要です。パスワードを以下に入力してください。"
+      log_manual_action "Added settings to enable extra plugins related to copilot."
       command sudo --validate
     fi
     command sudo "$@"
@@ -53,7 +52,7 @@ sudo() {
 }
 
 # -=-=-=- Git -=-=-=-
-# gitリポジトリをクリーンアップする関数
+# clean up git repository function
 git_clean() {
   path=$(realpath "$1")
   remote="$2"
@@ -74,7 +73,7 @@ git_clean() {
   unset path remote branch git
 }
 
-# gitインストール
+# install git
 DOTFILES_REPO_HOST=${DOTFILES_REPO_HOST:-"https://github.com"}
 DOTFILES_USER=${DOTFILES_USER:-"neputa"}
 DOTFILES_REPO="${DOTFILES_REPO_HOST}/${DOTFILES_USER}/dotfiles"
@@ -87,7 +86,7 @@ if ! command -v git >/dev/null 2>&1; then
   sudo env DEBIAN_FRONTEND=noninteractive apt install --yes --no-install-recommends git
 fi
 
-# gitリポジトリのクローンまたは更新
+# clone repository or update
 if [ -d "${DOTFILES_DIR}" ]; then
   git_clean "${DOTFILES_DIR}" "${DOTFILES_REPO}" "${DOTFILES_BRANCH}"
 else
@@ -95,41 +94,41 @@ else
   git clone --recursive --branch "${DOTFILES_BRANCH}" "${DOTFILES_REPO}" "${DOTFILES_DIR}"
 fi
 
-# -=-=-=- common シンボリックリンク -=-=-=-
+# -=-=-=- common symbolic link -=-=-=-
 # create_symbolicklink_function.shを読み込む
 source "${DOTFILES_DIR}/utils/create_symbolicklink_function.sh"
 
-# ファイルのシンボリックリンク作成
+# create symbolic links  for files
 log_task "Create symbolic links to common configuration files"
 create_symbolic_links_for_files "$DOTFILES_DIR/common/config" ~
 
-# ディレクトリのシンボリックリンク作成
+# create symbolic links  for directories
 log_task "Create symbolic links for common configuration directories"
 create_symbolic_links_for_directories "$DOTFILES_DIR/common/config" "$HOME/.config"
 
-# -=-=-=- ubuntu シンボリックリンク -=-=-=-
-# ubuntu/config以下のシンボリックリンク作成
+# -=-=-=- ubuntu symbolic link -=-=-=-
+# Create symbolic link under ubuntu/config
 
-# ファイルのシンボリックリンク作成
+# Create symbolic links to files
 log_task "Create symbolic links to Ubuntu configuration files"
 create_symbolic_links_for_files "$DOTFILES_DIR/ubuntu/config" ~
 
-# ディレクトリのシンボリックリンク作成
+# Create symbolic links to directories
 log_task "Create symbolic links for Ubuntu configuration directories"
 create_symbolic_links_for_directories "$DOTFILES_DIR/ubuntu/config" "$HOME/.config"
 
-# -=-=-=- ubuntu ファイルコピー -=-=-=-
+# -=-=-=- ubuntu copy files -=-=-=-
 source "${DOTFILES_DIR}/utils/copy_file_function.sh"
 
 copy_file_with_backup "$DOTFILES_DIR/ubuntu/copy/wsl.conf" "/etc"
 
-# -=-=-=- アプリケーション -=-=-=-
-# applicationインストール
+# -=-=-=- applications -=-=-=-
+# install application
 log_task "Installing Applications"
 
 sudo apt update && sudo apt full-upgrade -y
 
-# アプリケーションをインストールする関数
+# Function to install the application
 function install {
   if ! command -v "$1" &>/dev/null; then
     echo "Installing: $1..."
@@ -139,13 +138,14 @@ function install {
   fi
 }
 
-# 必要なアプリケーションをインストール
+# Install required applications
 apps=(
   curl
   fcitx5
   gcc
   make
   ripgrep
+  openssh-server
   tree
   unzip
   wget
@@ -156,15 +156,32 @@ for app in "${apps[@]}"; do
   install "$app"
 done
 
-# *.sh に一致するファイルがない場合、ループを実行しないようにする
+# Do not execute a loop if there is no matching file in *.sh
 shopt -s nullglob
 
-# ubuntu/apps 以下の全scriptを実行
+# Run all scripts under ubuntu/apps
 for script in $DOTFILES_DIR/ubuntu/apps/*.sh; do
-  [ -f "$script" ] || continue # ファイルが存在しない場合はスキップ
+  [ -f "$script" ] || continue # Skip if file does not exist
   bash "$script" -H
 done
 
-# 不要なパッケージを削除し、システムを最新状態に
+# Remove unnecessary packages and bring your system up to date
 sudo apt upgrade -y
 sudo apt autoremove -y
+
+log_task "Application installation complete"
+
+# -=-=-=- resolv.conf -=-=-=-
+log_task "Delete and create new resolv.conf"
+
+sudo rm -rf /etc/resolv.conf
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+
+log_task "Deletion and new creation of resolv.conf completed"
+
+# -=-=-=- Newvim -=-=-=-
+log_task "Restore Neovim plug-ins"
+
+nvim --headless "+Lazy! restore" +qa
+
+log_task "Completed restoration of neovim plug-ins"
