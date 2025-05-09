@@ -119,7 +119,7 @@ log_task "Create symbolic links for Ubuntu configuration directories"
 create_symbolic_links_for_directories "$DOTFILES_DIR/ubuntu/config" "$HOME/.config"
 
 # -=-=-=- ubuntu ファイルコピー -=-=-=-
-source "${DOTFILES_DIR}/utils/copy_file_function.sh
+source "${DOTFILES_DIR}/utils/copy_file_function.sh"
 
 copy_file_with_backup "$DOTFILES_DIR/ubuntu/copy/wsl.conf" "/etc"
 
