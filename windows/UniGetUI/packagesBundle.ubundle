@@ -144,6 +144,31 @@
       }
     },
     {
+      "Id": "CrystalDewWorld.CrystalDiskInfo",
+      "Name": "CrystalDiskInfo",
+      "Version": "9.6.3",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [
+          ""
+        ],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "DeepL.DeepL",
       "Name": "DeepL",
       "Version": "25.3.1",
@@ -170,6 +195,29 @@
       "Id": "Figma.Figma",
       "Name": "Figma",
       "Version": "125.2.3",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
+      "Id": "FortyOneLtd.AudioSwitcher",
+      "Name": "Audio Switcher",
+      "Version": "1.8.0.142",
       "Source": "winget",
       "ManagerName": "Winget",
       "InstallationOptions": {
@@ -445,29 +493,6 @@
       }
     },
     {
-      "Id": "Microsoft.AzureCLI",
-      "Name": "Microsoft Azure CLI",
-      "Version": "2.70.0",
-      "Source": "winget",
-      "ManagerName": "Winget",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
       "Id": "Microsoft.DotNet.SDK.8",
       "Name": "Microsoft .NET SDK 8.0",
       "Version": "8.0.114",
@@ -494,6 +519,29 @@
       "Id": "Microsoft.OneDrive",
       "Name": "Microsoft OneDrive",
       "Version": "25.041.0303.0002",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
+      "Id": "Microsoft.PCManager",
+      "Name": "PC Manager",
+      "Version": "3.9.7.0",
       "Source": "winget",
       "ManagerName": "Winget",
       "InstallationOptions": {
@@ -771,52 +819,6 @@
       }
     },
     {
-      "Id": "Python.Launcher",
-      "Name": "Python Launcher",
-      "Version": "\u003C 3.12.0",
-      "Source": "winget",
-      "ManagerName": "Winget",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
-      "Id": "Python.Python.3.10",
-      "Name": "Python 3.10",
-      "Version": "3.10.11",
-      "Source": "winget",
-      "ManagerName": "Winget",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
       "Id": "TheDocumentFoundation.LibreOffice",
       "Name": "LibreOffice",
       "Version": "25.2.2.2",
@@ -911,107 +913,11 @@
       }
     },
     {
-      "Id": "XPFFTQ032PTPHF",
-      "Name": "UniGetUI",
-      "Version": "3.1.8",
-      "Source": "msstore",
-      "ManagerName": "Winget",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
-      "Id": "caesium.install",
-      "Name": "Caesium",
-      "Version": "2.8.4",
-      "Source": "community",
-      "ManagerName": "Chocolatey",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [
-          ""
-        ],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
-      "Id": "font-hackgen-nerd",
-      "Name": "Font Hackgen Nerd",
-      "Version": "2.10.0",
-      "Source": "community",
-      "ManagerName": "Chocolatey",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
       "Id": "lin-ycv.EverythingPowerToys",
       "Name": "EverythingPowerToys",
       "Version": "0.89.0",
       "Source": "winget",
       "ManagerName": "Winget",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [
-          ""
-        ],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
-      "Id": "ripgrep",
-      "Name": "Ripgrep",
-      "Version": "14.1.0",
-      "Source": "community",
-      "ManagerName": "Chocolatey",
       "InstallationOptions": {
         "SkipHashCheck": false,
         "InteractiveInstallation": false,
@@ -1083,5 +989,30 @@
     }
   ],
   "incompatible_packages_info": "Incompatible packages cannot be installed from WingetUI, but they have been listed here for logging purposes.",
-  "incompatible_packages": []
+  "incompatible_packages": [
+    {
+      "Id": "caesium.install",
+      "Name": "Caesium",
+      "Version": "2.8.4",
+      "Source": "community"
+    },
+    {
+      "Id": "font-hackgen-nerd",
+      "Name": "Font Hackgen Nerd",
+      "Version": "2.10.0",
+      "Source": "community"
+    },
+    {
+      "Id": "msys2",
+      "Name": "Msys2",
+      "Version": "20250221.0.0",
+      "Source": "community"
+    },
+    {
+      "Id": "ripgrep",
+      "Name": "Ripgrep",
+      "Version": "14.1.0",
+      "Source": "community"
+    }
+  ]
 }
