@@ -8,26 +8,27 @@ $DotfilesFolderPath = Join-Path -Path $HOME -ChildPath $DotfilesFolderName
 # -=-=-=- Git and Others -=-=-=-
 # winget
 if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-    Write-Host "wingetis not installed. install it from here:"
-    Write-Host "https://learn.microsoft.com/ja-jp/windows/package-manager/winget/"
-    exit 1
+  Write-Host "wingetis not installed. install it from here:"
+  Write-Host "https://learn.microsoft.com/ja-jp/windows/package-manager/winget/"
+  exit 1
 }
 
 # git
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-    Write-Host "GIt is not installed. I install it by winget."
-    winget install --id Git.Git -e
+  Write-Host "GIt is not installed. I install it by winget."
+  winget install --id Git.Git -e
 }
 
 # check $DotfilesFolderPath
 if (Test-Path $DotfilesFolderPath) {
-    Write-Host "clean up existing repository"
-    git -C $DotfilesFolderPath clean -fdx
-    git -C $DotfilesFolderPath fetch origin $GitBranch
-    git -C $DotfilesFolderPath reset --hard origin/$GitBranch
-} else {
-    Write-Host "clone repostiroy"
-    git clone --recursive --branch $GitBranch $GitRepositoryUri $DotfilesFolderPath
+  Write-Host "clean up existing repository"
+  git -C $DotfilesFolderPath clean -fdx
+  git -C $DotfilesFolderPath fetch origin $GitBranch
+  git -C $DotfilesFolderPath reset --hard origin/$GitBranch
+}
+else {
+  Write-Host "clone repostiroy"
+  git clone --recursive --branch $GitBranch $GitRepositoryUri $DotfilesFolderPath
 }
 
 # import utils scripts
@@ -58,15 +59,27 @@ Write-Host "done!"
 
 # applications
 $PossiblePaths = @(
-    $env:LOCALAPPDATA + "\Programs\UniGetUI\UniGetUI.exe",
-    $env:LOCALAPPDATA + "\UniGetUI\UniGetUI.exe",
-    "C:\Program Files\UniGetUI\UniGetUI.exe"
+  $env:LOCALAPPDATA + "\Programs\UniGetUI\UniGetUI.exe",
+  $env:LOCALAPPDATA + "\UniGetUI\UniGetUI.exe",
+  "C:\Program Files\UniGetUI\UniGetUI.exe"
 )
 
 Check-And-Install-App -PossiblePaths $PossiblePaths -WingetId "MartiCliment.UniGetUI"
 
-# UniGetUIの
-Write-Host "innstall apps with UniGetUI:"
-Write-Host "$DotfilesFolderPath\windows\UniGetUI\README.md"
+# -=-=-=- Change of ownership. -=-=-=-
+# Change the ownership of a directory
+#
+Write-Host "Change the ownership of a directory"
 
-Write-Host "done!"
+takeown /f $DotfilesFolderPath /r /d y
+
+Write-Host "Changing the ownership of a directory is completed."
+
+# -=-=-=- show result message -=-=-=-
+Write-Host "===================================================="
+Write-Host "After that, install the application using UniGetUI. "
+Write-Host "Also, follow the README file to complete the post-installation process."
+Write-Host "$DotfilesFolderPath\windows\UniGetUI\README.md"
+Write-Host "===================================================="
+Write-host ""
+Write-Host "DOTFILES has been processed!"
