@@ -121,6 +121,29 @@
       }
     },
     {
+      "Id": "Chocolatey.Chocolatey",
+      "Name": "Chocolatey",
+      "Version": "2.4.3.0",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "CoreyButler.NVMforWindows",
       "Name": "NVM for Windows",
       "Version": "1.2.2",
@@ -608,6 +631,31 @@
       }
     },
     {
+      "Id": "Microsoft.PowerToys",
+      "Name": "PowerToys",
+      "Version": "0.90.1",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": true,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [
+          ""
+        ],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "Microsoft.SQLServerManagementStudio",
       "Name": "Microsoft SQL Server Management Studio",
       "Version": "20.2.1",
@@ -854,31 +902,6 @@
         "Architecture": "",
         "InstallationScope": "",
         "CustomParameters": [],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
-      "Id": "XP89DCGQ3K6VLD",
-      "Name": "Microsoft PowerToys",
-      "Version": "0.89.0",
-      "Source": "msstore",
-      "ManagerName": "Winget",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [
-          ""
-        ],
         "PreRelease": false,
         "CustomInstallLocation": "",
         "Version": "",
