@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -17,7 +17,7 @@
             "id": "User.find"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
@@ -25,7 +25,7 @@
             "id": "User.copy.644BA8F2"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane"
             },
@@ -35,7 +35,7 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{219ab038-0ea7-4534-8583-d2b0c664b2af}",
-    "disabledProfileSources":
+    "disabledProfileSources": 
     [
         "Windows.Terminal.Wsl",
         "Windows.Terminal.Azure",
@@ -43,7 +43,7 @@
         "Windows.Terminal.SSH"
     ],
     "initialRows": 50,
-    "keybindings":
+    "keybindings": 
     [
         {
             "id": "User.find",
@@ -99,24 +99,24 @@
         }
     ],
     "launchMode": "default",
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "colorScheme": "Molokai",
-            "font":
+            "font": 
             {
                 "face": "HackGen Console NF",
                 "size": 14
             }
         },
-        "list":
+        "list": 
         [
             {
                 "commandline": "%ProgramFiles%\\PowerShell\\7\\pwsh.exe",
@@ -144,34 +144,52 @@
                 "name": "Command Prompt",
                 "padding": "10",
                 "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{8615d53a-d714-5828-abb4-5ee800eae4f7}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{953dd51f-8f88-5ccd-be98-8f372ed644fd}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+                "hidden": true,
+                "name": "Visual Studio Debug Console",
+                "source": "VSDebugConsole"
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
-            "name": "Molokai",
-            "black": "#121212",
-            "red": "#fa2573",
-            "green": "#98e123",
-            "yellow": "#dfd460",
-            "blue": "#1080d0",
-            "purple": "#8700ff",
-            "cyan": "#43a8d0",
-            "white": "#bbbbbb",
-            "brightBlack": "#555555",
-            "brightRed": "#f6669d",
-            "brightGreen": "#b1e05f",
-            "brightYellow": "#fff26d",
-            "brightBlue": "#00afff",
-            "brightPurple": "#af87ff",
-            "brightCyan": "#51ceff",
-            "brightWhite": "#ffffff",
             "background": "#121212",
-            "foreground": "#bbbbbb",
-            "selectionBackground": "#b5d5ff",
-            "cursorColor": "#bbbbbb"
+            "black": "#121212",
+            "blue": "#1080D0",
+            "brightBlack": "#555555",
+            "brightBlue": "#00AFFF",
+            "brightCyan": "#51CEFF",
+            "brightGreen": "#B1E05F",
+            "brightPurple": "#AF87FF",
+            "brightRed": "#F6669D",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFF26D",
+            "cursorColor": "#BBBBBB",
+            "cyan": "#43A8D0",
+            "foreground": "#BBBBBB",
+            "green": "#98E123",
+            "name": "Molokai",
+            "purple": "#8700FF",
+            "red": "#FA2573",
+            "selectionBackground": "#B5D5FF",
+            "white": "#BBBBBB",
+            "yellow": "#DFD460"
         }
     ],
-    "themes": [ ]
+    "themes": []
 }

@@ -215,6 +215,31 @@
       }
     },
     {
+      "Id": "Docker.DockerDesktop",
+      "Name": "Docker Desktop",
+      "Version": "4.41.2",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": true,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [
+          ""
+        ],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "Figma.Figma",
       "Name": "Figma",
       "Version": "125.2.3",
@@ -656,43 +681,20 @@
       }
     },
     {
-      "Id": "Microsoft.SQLServerManagementStudio",
-      "Name": "Microsoft SQL Server Management Studio",
-      "Version": "20.2.1",
+      "Id": "Microsoft.VisualStudio.2022.Community",
+      "Name": "Visual Studio Community 2022",
+      "Version": "17.14.0",
       "Source": "winget",
       "ManagerName": "Winget",
       "InstallationOptions": {
         "SkipHashCheck": false,
-        "InteractiveInstallation": false,
+        "InteractiveInstallation": true,
         "RunAsAdministrator": false,
         "Architecture": "",
         "InstallationScope": "",
         "CustomParameters": [
           ""
         ],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
-      "Id": "Microsoft.VisualStudio.2022.Community",
-      "Name": "Visual Studio Community 2022",
-      "Version": "17.13.5",
-      "Source": "winget",
-      "ManagerName": "Winget",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [],
         "PreRelease": false,
         "CustomInstallLocation": "",
         "Version": "",
@@ -998,6 +1000,29 @@
         "CustomParameters": [
           ""
         ],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
+      "Id": "visualstudio-installer",
+      "Name": "Visualstudio Installer",
+      "Version": "2.0.3",
+      "Source": "community",
+      "ManagerName": "Chocolatey",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [],
         "PreRelease": false,
         "CustomInstallLocation": "",
         "Version": "",
