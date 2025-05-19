@@ -2,14 +2,18 @@
 setlocal enabledelayedexpansion
 
 set BACKUPDIR=%USERPROFILE%\Documents\RegBackups
-set DATE=%DATE:~0,4%%DATE:~5,2%%DATE:~8,2%
-set TIME=%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
-if "%TIME:~0,1%"==" " set TIME=0%TIME:~1%
-set DATETIME=%DATE%_%TIME%
+for /f "tokens=*" %%I in ('PowerShell -Command "(Get-Date).ToString(\"yyyyMMdd_HHmmss\")"') do set DATETIME=%%I
+if "%DATETIME%"=="" (
+    echo Error retrieving date and time.
+    pause
+    exit /b 1
+)
+set DATE=%DATETIME:~0,8%
+set TIME=%DATETIME:~9,6%
 mkdir "%BACKUPDIR%" 2>nul
 
-REM 古いバックアップを削除（7日以上前のファイル）
-forfiles /p "%BACKUPDIR%" /s /m *.reg /d -7 /c "cmd /c del @path" || (
+REM Delete old backup files (older than 7 days)
+PowerShell -Command "Get-ChildItem -Path '%BACKUPDIR%' -Filter '*.reg' | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Force" || (
     echo Error deleting old backup files.
     pause
     exit /b 1

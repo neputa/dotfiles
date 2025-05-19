@@ -121,6 +121,29 @@
       }
     },
     {
+      "Id": "Chocolatey.Chocolatey",
+      "Name": "Chocolatey",
+      "Version": "2.4.3.0",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
       "Id": "CoreyButler.NVMforWindows",
       "Name": "NVM for Windows",
       "Version": "1.2.2",
@@ -181,6 +204,31 @@
         "Architecture": "",
         "InstallationScope": "",
         "CustomParameters": [],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
+      "Id": "Docker.DockerDesktop",
+      "Name": "Docker Desktop",
+      "Version": "4.41.2",
+      "Source": "winget",
+      "ManagerName": "Winget",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": true,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [
+          ""
+        ],
         "PreRelease": false,
         "CustomInstallLocation": "",
         "Version": "",
@@ -608,15 +656,15 @@
       }
     },
     {
-      "Id": "Microsoft.SQLServerManagementStudio",
-      "Name": "Microsoft SQL Server Management Studio",
-      "Version": "20.2.1",
+      "Id": "Microsoft.PowerToys",
+      "Name": "PowerToys",
+      "Version": "0.90.1",
       "Source": "winget",
       "ManagerName": "Winget",
       "InstallationOptions": {
         "SkipHashCheck": false,
         "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
+        "RunAsAdministrator": true,
         "Architecture": "",
         "InstallationScope": "",
         "CustomParameters": [
@@ -635,16 +683,18 @@
     {
       "Id": "Microsoft.VisualStudio.2022.Community",
       "Name": "Visual Studio Community 2022",
-      "Version": "17.13.5",
+      "Version": "17.14.0",
       "Source": "winget",
       "ManagerName": "Winget",
       "InstallationOptions": {
         "SkipHashCheck": false,
-        "InteractiveInstallation": false,
+        "InteractiveInstallation": true,
         "RunAsAdministrator": false,
         "Architecture": "",
         "InstallationScope": "",
-        "CustomParameters": [],
+        "CustomParameters": [
+          ""
+        ],
         "PreRelease": false,
         "CustomInstallLocation": "",
         "Version": "",
@@ -865,31 +915,6 @@
       }
     },
     {
-      "Id": "XP89DCGQ3K6VLD",
-      "Name": "Microsoft PowerToys",
-      "Version": "0.89.0",
-      "Source": "msstore",
-      "ManagerName": "Winget",
-      "InstallationOptions": {
-        "SkipHashCheck": false,
-        "InteractiveInstallation": false,
-        "RunAsAdministrator": false,
-        "Architecture": "",
-        "InstallationScope": "",
-        "CustomParameters": [
-          ""
-        ],
-        "PreRelease": false,
-        "CustomInstallLocation": "",
-        "Version": "",
-        "SkipMinorUpdates": false
-      },
-      "Updates": {
-        "UpdatesIgnored": false,
-        "IgnoredVersion": ""
-      }
-    },
-    {
       "Id": "XP89HZ8SVWTT0M",
       "Name": "ElevenClock",
       "Version": "4.3.2",
@@ -975,6 +1000,29 @@
         "CustomParameters": [
           ""
         ],
+        "PreRelease": false,
+        "CustomInstallLocation": "",
+        "Version": "",
+        "SkipMinorUpdates": false
+      },
+      "Updates": {
+        "UpdatesIgnored": false,
+        "IgnoredVersion": ""
+      }
+    },
+    {
+      "Id": "visualstudio-installer",
+      "Name": "Visualstudio Installer",
+      "Version": "2.0.3",
+      "Source": "community",
+      "ManagerName": "Chocolatey",
+      "InstallationOptions": {
+        "SkipHashCheck": false,
+        "InteractiveInstallation": false,
+        "RunAsAdministrator": false,
+        "Architecture": "",
+        "InstallationScope": "",
+        "CustomParameters": [],
         "PreRelease": false,
         "CustomInstallLocation": "",
         "Version": "",
