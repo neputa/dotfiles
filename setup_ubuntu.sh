@@ -142,6 +142,7 @@ function install {
 apps=(
   curl
   fcitx5
+  fd-find
   gcc
   make
   ripgrep
