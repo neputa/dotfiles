@@ -24,7 +24,7 @@ function Create-Symlinks {
     }
 
     # create symboliklink for files
-    Get-ChildItem -File -Path $SourceFolder -Filter ".*" | ForEach-Object {
+    Get-ChildItem -File -Path $SourceFolder | Where-Object { $_.Name -match '^[._]' } | ForEach-Object {
         $SourcePath = $_.FullName
         $TargetPath = Join-Path -Path $HOME -ChildPath $_.Name
 
