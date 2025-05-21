@@ -1,0 +1,23 @@
+set clipboard=unnamed
+set number
+set relativenumber
+set cursorline
+set ignorecase
+set smartcase
+set hlsearch
+
+let mapleader="\<Space>"
+
+nnoremap Y y$
+nnoremap c "_c
+nnoremap C "_C
+nnoremap dd "_dd
+nnoremap DD "_DD
+nnoremap s "_s
+
+vnoremap c "_c
+vnoremap C "_C
+vnoremap dd "_dd
+vnoremap DD "_DD
+vnoremap s "_s
+vnoremap p "_dP
