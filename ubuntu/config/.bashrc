@@ -121,9 +121,6 @@ if [[ $- != *i* ]]; then
 fi
 export LAZYGIT_SHELL="bash -c"
 
-if [ "$(service docker status | awk '{print $4}')" = "not" ]; then
-  sudo service docker start >/dev/null
-fi
 # Add specific Windows path to WSL PATH
 # windows_paths=(
 #   "/mnt/c/apps/zenhan/bin64"
