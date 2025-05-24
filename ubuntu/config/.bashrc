@@ -121,12 +121,6 @@ if [[ $- != *i* ]]; then
 fi
 export LAZYGIT_SHELL="bash -c"
 
-# 自動的に /mnt/c を作成して C: ドライブをマウント（既にされていなければ）
-if ! mountpoint -q /mnt/c; then
-  sudo mkdir -p /mnt/c
-  sudo mount -t drvfs C: /mnt/c
-fi
-
 if [ "$(service docker status | awk '{print $4}')" = "not" ]; then
   sudo service docker start >/dev/null
 fi
