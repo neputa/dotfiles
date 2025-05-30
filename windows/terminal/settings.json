@@ -4,10 +4,6 @@
     "actions": 
     [
         {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
             "command": 
             {
                 "action": "splitPane",
@@ -15,6 +11,10 @@
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": 
@@ -50,20 +50,20 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "id": "Terminal.MoveFocusDown",
-            "keys": "ctrl+shift+j"
-        },
-        {
             "id": "User.splitPane.A6751878",
             "keys": "alt+shift+d"
         },
         {
-            "id": "Terminal.MoveFocusRight",
-            "keys": "ctrl+shift+l"
+            "id": "Terminal.MoveFocusDown",
+            "keys": "ctrl+shift+j"
         },
         {
             "id": null,
             "keys": "ctrl+shift+6"
+        },
+        {
+            "id": "Terminal.MoveFocusRight",
+            "keys": "ctrl+shift+l"
         },
         {
             "id": "Terminal.MoveFocusUp",
@@ -162,6 +162,18 @@
                 "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
+            },
+            {
+                "guid": "{d8e8fe54-68e5-52cb-b2d8-1a087c702382}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 21",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{91028f18-ca24-5d73-87f7-f0632c0cafec}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 21",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
