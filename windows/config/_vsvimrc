@@ -52,3 +52,6 @@ vnoremap S* c/*<C-r>"*/<Esc>
 "vnoremap St c<lt>div><CR><C-r>"<Esc>
 " Surround in div tag and edit tag
 vnoremap St c<lt>div><CR><C-r>"<Esc>`<lt>lcw
+
+" IME insert mode handling
+inoremap <ESC> <ESC>:set iminsert=0<CR>
