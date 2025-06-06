@@ -12,3 +12,6 @@
 	commitencoding = utf-8
 [commit]
 	template = ~/.commit_template
+[fetch]
+	prune = true
+	auto = 1
